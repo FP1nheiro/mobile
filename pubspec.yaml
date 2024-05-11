@@ -1,0 +1,41 @@
+name: nepa
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  shared_preferences: ^2.2.3
+  image_picker: 
+  carousel_slider: ^4.2.1
+  google_fonts: 
+  flutter_svg: ^2.0.10+1
+
+  flutter:
+    sdk: flutter
+
+
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  
+  flutter_lints: ^2.0.0
+
+
+flutter:
+  uses-material-design: true
+
+  
+  assets:
+    - assets/images/nepa.png
+    - assets/images/faculdade.png
+    - assets/images/sem_foto.jpg
+    - assets/images/image_2.png
