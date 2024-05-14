@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:mobile/models/project.dart';
-import 'package:mobile/pages/project_signup.page.dart';
-import 'package:mobile/utils/style.dart';
-=======
 import 'package:nepa/models/project.dart';
 import 'package:nepa/pages/project_signup.page.dart';
 import 'package:nepa/utils/style.dart';
->>>>>>> filipe
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProjetosDiponiveisPage extends StatefulWidget {

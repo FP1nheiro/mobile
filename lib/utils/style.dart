@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:mobile/models/project.dart';
-=======
 import 'package:nepa/models/project.dart';
->>>>>>> filipe
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Tema {

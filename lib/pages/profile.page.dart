@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:mobile/utils/style.dart';
-=======
 import 'package:nepa/utils/style.dart';
->>>>>>> filipe
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfilePage extends StatefulWidget {

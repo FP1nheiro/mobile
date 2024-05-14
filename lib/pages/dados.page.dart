@@ -2,17 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-<<<<<<< HEAD
-import 'package:mobile/pages/about.page.dart';
-import 'package:mobile/pages/changePassword.page.dart';
-import 'package:mobile/pages/login.page.dart';
-import 'package:mobile/pages/profile.page.dart';
-import 'package:mobile/pages/project_registred.page.dart';
-import 'package:mobile/pages/suporte.page.dart';
-import 'package:mobile/pages/termos.page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:mobile/utils/style.dart';
-=======
 import 'package:nepa/pages/about.page.dart';
 import 'package:nepa/pages/changePassword.page.dart';
 import 'package:nepa/pages/login.page.dart';
@@ -22,7 +11,6 @@ import 'package:nepa/pages/suporte.page.dart';
 import 'package:nepa/pages/termos.page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:nepa/utils/style.dart';
->>>>>>> filipe
 
 class DadosPage extends StatefulWidget {
   const DadosPage({Key? key}) : super(key: key);

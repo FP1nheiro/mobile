@@ -2,11 +2,11 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:mobile/pages/dados.page.dart';
-
-import 'package:mobile/pages/profile.page.dart';
-import 'package:mobile/pages/project_disponiveis.page.dart';
-import 'package:mobile/utils/style.dart';
+import 'package:nepa/pages/dados.page.dart';
+import 'package:nepa/pages/login.page.dart';
+import 'package:nepa/pages/profile.page.dart';
+import 'package:nepa/pages/project_disponiveis.page.dart';
+import 'package:nepa/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildCarousel() {
     List<String> images = [
-      'assets/images/mobile.png',
+      'assets/images/nepa.png',
       'assets/images/faculdade.png',
     ];
 
