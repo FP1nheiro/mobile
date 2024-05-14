@@ -1,16 +1,36 @@
-# mobile
+# Projeto NEPA Mobile.
 
-A new Flutter project.
+Um extensão do Sistema do NEPA Web para Mobile, assim facilitando o acesso de Usuários que não possuem a possibilidade de ter um computador portatil ou não.
 
-## Getting Started
+## SOBRE O PROJETO
 
-This project is a starting point for a Flutter application.
+Bem-vindo ao repositório GitHub do projeto NEPA Mobile uma extensão do NEPA Web, um aplicativo interativo visando diminuir a quantidade de burocracia existente no metodo atual. 
 
-A few resources to get you started if this is your first Flutter project:
+ #Funcionalidades
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    Cadastro de Usuários: Os usuários podem se registrar no aplicativo tanto MOBILE quanto WEB, para assim conseguirem inscrever-se nos Projetos de Pesquisa e Extensão.
+    Inscrição de Projetos: O Usuário tem a possibilidade de se inscrever em no maximo dois Projetos, independente do curso, podendo tambem no momento da inscrição ler a descrição do mesmo.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ #Tecnologias Utilizadas:
+
+  #O projeto NEPA Mobile foi desenvolvido usando as seguintes Tecnologias:
+
+    Flutter: Um framework de UI da Google para criar belas aplicações nativamente compiladas a partir de uma única base de código para mobile, web e desktop.
+    Dart: Linguagem de programação otimizada para aplicativos em Flutter.
+    Git: Sistema de controle de versão para rastreamento de alterações no código fonte durante o desenvolvimento.
+
+ #Requisitos para Rodar o Aplicativo:
+
+  #Para executar este aplicativo localmente, são necessárias as seguintes ferramentas:
+
+    Flutter SDK: Versão mais recente instalada e configurada em seu sistema.
+    Android Studio ou VS Code: Para desenvolvimento e emulação.
+    Git: Para clonagem e gestão do repositório.
+
+##Equipe:
+
+  #Este projeto foi realizado com a colaboração de:
+
+    Francisco Pinheiro
+    Felipe Izidorio
+    José Hudson
