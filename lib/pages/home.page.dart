@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:nepa/pages/dados.page.dart';
 import 'package:nepa/pages/login.page.dart';
+import 'package:nepa/pages/profile.page.dart';
+import 'package:nepa/pages/project_disponiveis.page.dart';
 import 'package:nepa/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -59,13 +61,12 @@ class _HomePageState extends State<HomePage> {
           actions: <Widget>[
             IconButton(
               onPressed: () async {
-                // Espera pela navegação para a página de perfil
-                //await Navigator.push(
-                  //context,
-                  //MaterialPageRoute(
-                    //builder: (context) => const ProfilePage(),
-                  //),
-                //);
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfilePage(),
+                  ),
+                );
 
                 // Após retornar da página de perfil, recarrega as preferências para atualizar a imagem
                 await _loadPreferences();
@@ -105,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 accountName: Text(_nomeController.text),
                 accountEmail: Text(_emailController.text),
-                currentAccountPicture: GestureDetector(
+                currentAccountPicture: InkWell(
                   child: Stack(
                     alignment: Alignment.bottomCenter,
                     children: [
@@ -125,24 +126,24 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 leading: Icon(Icons.account_circle_outlined),
-                title: Text('Meus Dados'),
+                title: const Text('Meus Dados'),
                 onTap: () async {
                 await Navigator.push(
                      context,
                      MaterialPageRoute(
-                          builder: (context) => const DadosPage()));
+                          builder: (context) => const ProfilePage()));
                   await _loadPreferences();
                   setState(() {});
                 },
               ),
               ListTile(
                 leading: Icon(Icons.settings_suggest_outlined),
-                title: Text('Configurações'),
+                title: const Text('Configurações'),
                 onTap: () async {
-                 // await Navigator.push(
-                    //  context,
-                     // MaterialPageRoute(
-                      //    builder: (context) => const ProfilePage()));
+                  await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DadosPage()));
                   await _loadPreferences();
                   setState(() {});
                 },
@@ -155,7 +156,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             buildCarousel(),
             const SizedBox(height: 70),
-            buildElevatedButtonField(500, 'Projetos Disponiveis', () {})
+            buildElevatedButtonField(500, 'Projetos Disponiveis', () {Navigator.push(context, MaterialPageRoute(builder: (context) =>  ProjetosDiponiveisPage()));})
           ],
         ),
       ),

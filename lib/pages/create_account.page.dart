@@ -42,6 +42,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         _image = File(pickedFile.path);
       });
       await prefs.setString('user_image', pickedFile.path);
+    } else {
+      await prefs.setString('user_image', " ");
     }
   }
 
@@ -127,39 +129,37 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              GestureDetector(
-                    onTap: _pickImage,
-                    child: Stack(
-                      alignment: Alignment.bottomRight,
-                      children: [
-                        Container(
-                          width: 130,
-                          height: 130,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                color:const Color.fromARGB(0, 0, 0, 0),
-                                width: 3),
-                            borderRadius: BorderRadius.circular(50.5),
-                            image: _image != null
-                                ? DecorationImage(
-                                    image: FileImage(_image!),
-                                    fit: BoxFit.cover)
-                                : null,
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            radius: 14,
-                            backgroundColor: Colors.grey[200],
-                            child: const Icon(Icons.camera_enhance,
-                                color: Colors.green, size: 20),
-                          ),
-                        ),
-                      ],
+              InkWell(
+                onTap: _pickImage,
+                child: Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    Container(
+                      width: 130,
+                      height: 130,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color.fromARGB(0, 0, 0, 0), width: 3),
+                        borderRadius: BorderRadius.circular(50.5),
+                        image: _image != null
+                            ? DecorationImage(
+                                image: FileImage(_image!), fit: BoxFit.cover)
+                            : null,
+                        color: Colors.grey[200],
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        radius: 14,
+                        backgroundColor: Colors.grey[200],
+                        child: const Icon(Icons.camera_enhance,
+                            color: Colors.green, size: 20),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -170,7 +170,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       controller: _nomeController,
                       keyboardType: TextInputType.text,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'OpenSans',
                       ),
                       decoration: InputDecoration(
@@ -210,7 +210,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       controller: _matriculaController,
                       keyboardType: TextInputType.number,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'OpenSans',
                       ),
                       decoration: InputDecoration(
@@ -245,12 +245,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 children: <Widget>[
                   Container(
                     width: 315.0,
-                    padding: EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 10),
                     child: TextField(
                       controller: _telefoneController,
                       keyboardType: TextInputType.number,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'OpenSans',
                       ),
                       decoration: InputDecoration(
@@ -290,7 +290,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'OpenSans',
                       ),
                       decoration: InputDecoration(
@@ -376,7 +376,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: !_verSenha,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'OpenSans',
                       ),
                       decoration: InputDecoration(

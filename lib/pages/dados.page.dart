@@ -2,8 +2,15 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:nepa/utils/style.dart';
+import 'package:nepa/pages/about.page.dart';
+import 'package:nepa/pages/changePassword.page.dart';
+import 'package:nepa/pages/login.page.dart';
+import 'package:nepa/pages/profile.page.dart';
+import 'package:nepa/pages/project_registred.page.dart';
+import 'package:nepa/pages/suporte.page.dart';
+import 'package:nepa/pages/termos.page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:nepa/utils/style.dart';
 
 class DadosPage extends StatefulWidget {
   const DadosPage({Key? key}) : super(key: key);
@@ -15,6 +22,11 @@ class DadosPage extends StatefulWidget {
 class _DadosPageState extends State<DadosPage> {
   File? _image;
   SharedPreferences? prefs;
+
+  signOut() async {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => const LoginPage()));
+  }
 
   @override
   void initState() {
@@ -29,7 +41,6 @@ class _DadosPageState extends State<DadosPage> {
     if (imagePath != null) {
       _image = File(imagePath);
     }
-
     setState(() {});
   }
 
@@ -42,7 +53,6 @@ class _DadosPageState extends State<DadosPage> {
         _image = File(pickedFile.path);
       });
       await prefs?.setString(Tema().image, pickedFile.path);
-      _loadPreferences(); // Atualiza a imagem imediatamente após a seleção
     }
   }
 
@@ -60,101 +70,101 @@ class _DadosPageState extends State<DadosPage> {
         centerTitle: true,
         foregroundColor: Colors.black,
       ),
-      extendBodyBehindAppBar: true,
-      body: Stack(
-        children: <Widget>[
-          Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.only(top: 100),
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color.fromARGB(255, 203, 212, 250),
-                    Color.fromARGB(255, 145, 165, 255),
-                    Color.fromRGBO(76, 133, 255, 1)
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
-              child: SingleChildScrollView(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  GestureDetector(
-                    onTap: _pickImage,
-                    child: Stack(
-                      alignment: Alignment.bottomRight,
-                      children: [
-                        Container(
-                          width: 130,
-                          height: 130,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                color: const Color.fromARGB(255, 201, 255, 138),
-                                width: 3),
-                            borderRadius: BorderRadius.circular(50.5),
-                            image: _image != null
-                                ? DecorationImage(
-                                    image: FileImage(_image!),
-                                    fit: BoxFit.cover)
-                                : null,
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            radius: 14,
-                            backgroundColor: Colors.grey[200],
-                            child: const Icon(Icons.camera_enhance,
-                                color: Colors.green, size: 20),
-                          ),
-                        ),
-                      ],
+      body: ListView(
+        children: [
+          Center(
+            child: InkWell(
+              onTap: _pickImage,
+              child: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  Container(
+                    width: 130,
+                    height: 130,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 201, 255, 138),
+                          width: 3),
+                      borderRadius: BorderRadius.circular(50.5),
+                      image: _image != null
+                          ? DecorationImage(
+                              image: FileImage(_image!), fit: BoxFit.cover)
+                          : null,
+                      color: Colors.grey[200],
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: () {}, // Replace with actual functionality
-                          child: Text(
-                            'Acessibilidade', // Accessibility in Portuguese
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                            ),
-                          ),
-                          style: TextButton.styleFrom(
-                            side: BorderSide(width: 3),
-                              shape: LinearBorder.bottom(
-                                  side: BorderSide(color: Colors.blue),
-                                  size: 0)),
-                        )
-                      ],
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 14,
+                      backgroundColor: Color.fromRGBO(238, 238, 238, 1),
+                      child: Icon(Icons.camera_enhance,
+                          color: Colors.green, size: 20),
                     ),
                   ),
-                  Container(
-                      child: Column(
-                    children: <Widget>[
-                      OutlinedButton(
-                          onPressed: () {},
-                          style: OutlinedButton.styleFrom(
-                              side: BorderSide(
-                                  color: Colors.black,
-                                  style: BorderStyle.solid)),
-                          child: const Text(
-                            "Meus Dados",
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                fontSize: 20),
-                          ))
-                    ],
-                  )),
                 ],
-              )))
+              ),
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: Text('Editar Perfil'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.lock),
+            title: Text('Mudar Senha'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ChangePasswordPage()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.personal_injury),
+            title: Text('Meus Projetos'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RegisteredProjectsPage()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.info),
+            title: Text('Sobre o Aplicativo'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AboutPage()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.book),
+            title: Text('Termos de Serviço'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TermosPage()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.support),
+            title: Text('Suporte (Entrar em Contato)'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SuportePage()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Sair'),
+            onTap: () {
+              signOut();
+            },
+          ),
         ],
       ),
     );

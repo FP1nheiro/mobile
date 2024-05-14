@@ -72,11 +72,12 @@ class _LoginPageState extends State<LoginPage> {
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'OpenSans',
                       ),
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.only(top: 40.0),
+                        
                         enabledBorder: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             borderSide: BorderSide(
@@ -88,13 +89,14 @@ class _LoginPageState extends State<LoginPage> {
                                 color: Colors.purple, width: 2.5)),
                         prefixIcon: const Icon(
                           Icons.email,
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 0, 0, 0),
                         ),
                         alignLabelWithHint: true,
                         label: const Text("E-mail"),
                         hintText: "Digite seu e-mail",
+                        
                         hintStyle: const TextStyle(
-                          color: Color.fromARGB(137, 255, 255, 255),
+                          color: Color.fromARGB(136, 0, 0, 0),
                           fontFamily: 'OpenSans',
                         ),
                       ),
@@ -113,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: !_verSenha,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'OpenSans',
                       ),
                       decoration: InputDecoration(
@@ -129,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                                 width: 2.5)),
                         prefixIcon: const Icon(
                           Icons.password_rounded,
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 0, 0, 0),
                         ),
                         suffixIcon: IconButton(
                           icon: Icon(_verSenha
@@ -145,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                         label: const Text("Password"),
                         hintText: "Digite sua senha",
                         hintStyle: const TextStyle(
-                          color: Colors.white54,
+                          color: Color.fromARGB(137, 0, 0, 0),
                           fontFamily: 'OpenSans',
                         ),
                       ),
