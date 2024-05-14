@@ -90,12 +90,21 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
+<<<<<<< HEAD
             VALUE "FileDescription", "mobile" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "mobile" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "mobile.exe" "\0"
             VALUE "ProductName", "mobile" "\0"
+=======
+            VALUE "FileDescription", "nepa" "\0"
+            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "InternalName", "nepa" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "nepa.exe" "\0"
+            VALUE "ProductName", "nepa" "\0"
+>>>>>>> filipe
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

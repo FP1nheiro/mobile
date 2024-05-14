@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:mobile/pages/create_account.page.dart';
 import 'package:mobile/pages/login.page.dart';
+=======
+import 'package:nepa/pages/create_account.page.dart';
+import 'package:nepa/pages/login.page.dart';
+>>>>>>> filipe
 
 import '../utils/style.dart';
 

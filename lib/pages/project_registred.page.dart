@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:mobile/models/project.dart';
 import 'package:mobile/utils/style.dart';
+=======
+import 'package:nepa/models/project.dart';
+import 'package:nepa/utils/style.dart';
+>>>>>>> filipe
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisteredProjectsPage extends StatefulWidget {
@@ -22,7 +27,11 @@ class _RegisteredProjectsPageState extends State<RegisteredProjectsPage> {
   void unregisterFromProject(Project project) async {
     final prefs = await SharedPreferences.getInstance();
     tema.registeredProjects.remove(project);
+<<<<<<< HEAD
     List<String> savedProjectsNames = tema.registeredProjects.map((p) => p.name).toList();
+=======
+    List<String> savedProjectsNames = tema.registeredProjects.map((p) => Tema().nome).toList();
+>>>>>>> filipe
     await prefs.setStringList('registeredProjects', savedProjectsNames);
     setState(() {});  // Atualiza a UI após a remoção de um projeto
   }

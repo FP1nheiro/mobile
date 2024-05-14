@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/pages/splashscreen.page.dart';
+
+import 'package:nepa/pages/splashscreen.page.dart';
+>>>>>>> filipe
 
 
 void main() {

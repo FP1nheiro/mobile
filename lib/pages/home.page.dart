@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:mobile/pages/dados.page.dart';
-import 'package:mobile/pages/login.page.dart';
+
 import 'package:mobile/pages/profile.page.dart';
 import 'package:mobile/pages/project_disponiveis.page.dart';
 import 'package:mobile/utils/style.dart';
@@ -126,24 +126,24 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 leading: Icon(Icons.account_circle_outlined),
-                title: Text('Meus Dados'),
+                title: const Text('Meus Dados'),
                 onTap: () async {
                 await Navigator.push(
                      context,
                      MaterialPageRoute(
-                          builder: (context) => const DadosPage()));
+                          builder: (context) => const ProfilePage()));
                   await _loadPreferences();
                   setState(() {});
                 },
               ),
               ListTile(
                 leading: Icon(Icons.settings_suggest_outlined),
-                title: Text('Configurações'),
+                title: const Text('Configurações'),
                 onTap: () async {
-                 // await Navigator.push(
-                    //  context,
-                     // MaterialPageRoute(
-                      //    builder: (context) => const ProfilePage()));
+                  await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DadosPage()));
                   await _loadPreferences();
                   setState(() {});
                 },
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildCarousel() {
     List<String> images = [
-      'assets/images/nepa.png',
+      'assets/images/mobile.png',
       'assets/images/faculdade.png',
     ];
 

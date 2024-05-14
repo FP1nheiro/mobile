@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "mobile",
     "short_name": "mobile",
+=======
+    "name": "nepa",
+    "short_name": "nepa",
+>>>>>>> filipe
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+<<<<<<< HEAD
 import 'package:mobile/pages/initial.page.dart';
 import 'package:mobile/utils/style.dart';
+=======
+import 'package:nepa/pages/initial.page.dart';
+import 'package:nepa/utils/style.dart';
+>>>>>>> filipe
 
 
 class SplashScreenPage extends StatefulWidget {
